@@ -5,6 +5,16 @@
 <svg width="500" height="500"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <?php 
+        $db = pg_connect('host=ec2-54-235-182-120.compute-1.amazonaws.com dbname=d1hbm7ist1cc38 user=oqqwodgjyuhqyv password=xqQSoIO5gbPfUOVGPTp05Orni2'); 
+
+        $query = "SELECT region FROM semester3"; 
+
+        $result = pg_query($query);
+ if ($result) {
+  echo "success";
+ }
+ ?>
 <script type="text/javascript">
 
 var Names = ["X","Y","Z","","C","B","A",""];
