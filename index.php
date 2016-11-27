@@ -22,6 +22,8 @@
 <script type="text/javascript">
  var test = "<?php echo $test ?>";
  console.log(test);
+ var ar = "<?php echo json_encode($result) ?>";
+ console.log(ar[3]);
  
 var Names = ["X","Y","Z","","C","B","A",""];
 var respondents = 95, //Total number of respondents (i.e. the number that makes up the group)
