@@ -6,24 +6,7 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
-function loadData() {
-            $.ajax({
-            type: 'GET',
-            url: 'getdata.php',
-            datatype: 'html',
-            cache: false,
-            success: function(response){
-              console.log('worky');
-              createGraph(response);
-            },
-            error: function(){
-              console.log('fail');
-            }
-    });
-}
-loadData();
-function createGraph(matrix) {
-  console.log(matrix);
+
 var Names = ["X","Y","Z","","C","B","A",""];
 var respondents = 95, //Total number of respondents (i.e. the number that makes up the group)
   emptyPerc = 0.4, //What % of the circle should become empty in comparison to the visible arcs
@@ -109,7 +92,6 @@ function fade(opacity) {
     .transition("fadeOnArc")
     .style("opacity", opacity);
   };
-}
 }
 </script>
 </html>
