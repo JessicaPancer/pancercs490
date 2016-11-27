@@ -16,7 +16,9 @@
  }
  ?>
 <script type="text/javascript">
-
+var obj = <?php echo json_encode($result); ?>;
+console.log(obj);
+ 
 var Names = ["X","Y","Z","","C","B","A",""];
 var respondents = 95, //Total number of respondents (i.e. the number that makes up the group)
   emptyPerc = 0.4, //What % of the circle should become empty in comparison to the visible arcs
