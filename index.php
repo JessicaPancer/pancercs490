@@ -12,6 +12,7 @@
 
         $result = pg_query($query);
  if ($result) {
+  $test = "boop";
   while ($row = pg_fetch_row($result)) {
   echo "Region: $row[0]";
   echo "<br />\n";
@@ -19,6 +20,8 @@
  }
  ?>
 <script type="text/javascript">
+ var test = "<?php echo $test ?>";
+ console.log(test);
  
 var Names = ["X","Y","Z","","C","B","A",""];
 var respondents = 95, //Total number of respondents (i.e. the number that makes up the group)
