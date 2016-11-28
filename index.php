@@ -17,8 +17,6 @@
 $carr = pg_fetch_all($query1);
 $marr = pg_fetch_all($query2);
  
- echo "$carr[0]";
- 
  if ($cresult && $mresult) {
   $test = "boop";
   while ($row = pg_fetch_row($cresult)) {
@@ -30,8 +28,8 @@ $marr = pg_fetch_all($query2);
 <script type="text/javascript">
  var test = "<?php echo $test ?>";
  console.log(test);
- var ar = "<?php echo json_encode($result) ?>";
- console.log(ar[3]);
+ var ar = "<?php echo json_encode($carr) ?>";
+ console.log(ar);
  
 var Names = ["X","Y","Z","","C","B","A",""];
 var respondents = 95, //Total number of respondents (i.e. the number that makes up the group)
