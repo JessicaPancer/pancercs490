@@ -18,7 +18,7 @@
  $mrows = pg_num_rows($mresult);
  ?>
  <script type="text/javascript">
-  var a = 
+  var a = [
  "<?php 
  if ($cresult && $mresult) {
   while ($row = pg_fetch_row($cresult)) {
@@ -37,6 +37,7 @@
   }
  }
  ?>";
+ ];
   
   console.log(a);
  var test = "<?php echo $test ?>";
