@@ -28,12 +28,12 @@
     $query3 = "SELECT COUNT(*) FROM semester3 WHERE country = '$c' AND major = '$m[0]'";
     $num = pg_fetch_array(pg_query($query3));
     if ($j==0) {
-     echo "'[' $num[0]";
+     echo "[ $num[0]";
     } else {
      echo ", $num[0]";
     }
    }
-   echo "'],'";
+   echo "],";
   }
  }
  ?>";
