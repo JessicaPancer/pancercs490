@@ -18,7 +18,7 @@
  $mrows = pg_num_rows($mresult);
  
  if ($cresult && $mresult) {
-  for ($row = pg_fetch_row($cresult)) {
+  while ($row = pg_fetch_row($cresult)) {
    $c = $row[0];
    for ($j=0; $j<$mrows; $j++) {
     $m = pg_fetch_assoc($mresult, $j);
