@@ -14,15 +14,15 @@
         $cresult = pg_query($query1);
         $mresult = pg_query($query2);
  
-$carr = pg_fetch_all_columns($query1, 0);
-$marr = pg_fetch_all_columns($query2, 0);
+$carr = pg_fetch_all($query1);
+$marr = pg_fetch_all($query2);
  
- echo "$carr[0]";
+ echo "$carr[0]["country"]";
  
  if ($cresult && $mresult) {
   $test = "boop";
   while ($row = pg_fetch_row($cresult)) {
-  echo "Country: $row[0] Major:";
+  echo "Country: $row[0]";
   echo "<br />\n";
    }
  }
