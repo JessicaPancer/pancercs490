@@ -18,9 +18,13 @@
  $mrows = pg_num_rows($mresult);
  
  if ($cresult && $mresult) {
-  $test = "boop";
-  while ($row = pg_fetch_row($cresult)) {
-  echo "Country: $row[0] $crows $mrows";
+  for ($row = pg_fetch_row($cresult)) {
+   $c = $row[0];
+   for ($j=0; $j<$mrows; $j++) {
+    $m = pg_fetch_assoc($mresult, $j);
+    $query3 = "SELECT COUNT(*) FROM semester3 WHERE country = '$c' AND major = '$m'";
+    $num = pg_num_rows(pg_query($query3));
+  echo "Country: $c Major: $m Num:$num";
   echo "<br />\n";
    }
  }
