@@ -8,15 +8,23 @@
   <?php 
         $db = pg_connect('host=ec2-54-235-182-120.compute-1.amazonaws.com dbname=d1hbm7ist1cc38 user=oqqwodgjyuhqyv password=xqQSoIO5gbPfUOVGPTp05Orni2'); 
 
-        $query = "SELECT region FROM semester3"; 
+        $query1 = "SELECT DISTINCT country FROM semester3"; 
+        $query2 = "SELECT DISTINCT major FROM semester3";
 
-        $result = pg_query($query);
- if ($result) {
+        $cresult = pg_query($query1);
+        $mresult = pg_query($query2);
+ 
+$carr = pg_fetch_all_columns($query1, 0);
+$marr = pg_fetch_all_columns($query2, 0);
+ 
+ echo "$carr[0]";
+ 
+ if ($cresult && $mresult) {
   $test = "boop";
-  while ($row = pg_fetch_row($result)) {
-  echo "Region: $row[0]";
+  while ($row = pg_fetch_row($cresult)) {
+  echo "Country: $row[0] Major:";
   echo "<br />\n";
-}
+   }
  }
  ?>
 <script type="text/javascript">
