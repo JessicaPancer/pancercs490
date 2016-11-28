@@ -16,7 +16,10 @@
  
  $crows = pg_num_rows($cresult);
  $mrows = pg_num_rows($mresult);
- 
+ ?>
+ <script type="text/javascript">
+  var a = 
+ "<?php 
  if ($cresult && $mresult) {
   while ($row = pg_fetch_row($cresult)) {
    $c = $row[0];
@@ -24,17 +27,20 @@
     $m = pg_fetch_array($mresult, $j);
     $query3 = "SELECT COUNT(*) FROM semester3 WHERE country = '$c' AND major = '$m[0]'";
     $num = pg_fetch_array(pg_query($query3));
-    echo "Country: $c Major: $m[0] Num = $num[0]";
-    echo "<br />\n";
+    if ($j==0) {
+     echo "'[' $num[0]";
+    } else {
+     echo ", $num[0]";
+    }
    }
+   echo "'],'";
   }
  }
- ?>
-<script type="text/javascript">
+ ?>";
+  
+  console.log(a);
  var test = "<?php echo $test ?>";
  console.log(test);
- var ar = "<?php echo json_encode($carr) ?>";
- console.log(ar);
  
 var Names = ["X","Y","Z","","C","B","A",""];
 var respondents = 95, //Total number of respondents (i.e. the number that makes up the group)
