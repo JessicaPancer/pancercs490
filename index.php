@@ -22,8 +22,10 @@
    $c = $row[0];
    for ($j=0; $j<$mrows; $j++) {
     $m = pg_fetch_array($mresult, $j);
-  echo "Country: $c Major: $m[0]";
-  echo "<br />\n";
+    $query3 = "SELECT COUNT(*) FROM semester3 WHERE country = '$c' AND major = '$m[0]'";
+    $num = pg_fetch_array(pg_query($query3));
+    echo "Country: $c Major: $m[0] Num = $num[0]";
+    echo "<br />\n";
    }
   }
  }
