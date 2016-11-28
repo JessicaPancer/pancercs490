@@ -17,7 +17,7 @@
 $carr = pg_fetch_all($query1);
 $marr = pg_fetch_all($query2);
  
- echo "$carr[0]["country"]";
+ echo "$carr[0]";
  
  if ($cresult && $mresult) {
   $test = "boop";
