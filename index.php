@@ -14,13 +14,13 @@
         $cresult = pg_query($query1);
         $mresult = pg_query($query2);
  
-$carr = pg_fetch_all($query1);
-$marr = pg_fetch_all($query2);
+ $crows = pg_num_rows($cresult);
+ $mrows = pg_num_rows($mresult);
  
  if ($cresult && $mresult) {
   $test = "boop";
   while ($row = pg_fetch_row($cresult)) {
-  echo "Country: $row[0]";
+  echo "Country: $row[0] $crows $mrows";
   echo "<br />\n";
    }
  }
