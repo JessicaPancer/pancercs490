@@ -22,7 +22,7 @@
    $c = $row[0];
    for ($j=0; $j<$mrows; $j++) {
     $m = pg_fetch_assoc($mresult, $j);
-  echo "Country: $c Major: $m[0]";
+  echo "Country: $c Major: $m['major']";
   echo "<br />\n";
    }
   }
