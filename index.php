@@ -25,6 +25,7 @@
   echo "Country: $c Major: $m";
   echo "<br />\n";
    }
+  }
  }
  ?>
 <script type="text/javascript">
