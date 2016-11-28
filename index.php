@@ -21,8 +21,8 @@
   while ($row = pg_fetch_row($cresult)) {
    $c = $row[0];
    for ($j=0; $j<$mrows; $j++) {
-    $m = pg_fetch_assoc($mresult, $j);
-  echo "Country: $c Major: $m['major']";
+    $m = pg_fetch_array($mresult, $j);
+  echo "Country: $c Major: $m[0]";
   echo "<br />\n";
    }
   }
