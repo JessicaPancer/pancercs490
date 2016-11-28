@@ -18,9 +18,10 @@
  $mrows = pg_num_rows($mresult);
  ?>
  <script type="text/javascript">
-  var a = [
+  var a =
  "<?php 
  if ($cresult && $mresult) {
+  echo "[";
   while ($row = pg_fetch_row($cresult)) {
    $c = $row[0];
    for ($j=0; $j<$mrows; $j++) {
@@ -35,9 +36,9 @@
    }
    echo "],";
   }
+  echo "];"
  }
  ?>";
- ];
   
   console.log(a);
  var test = "<?php echo $test ?>";
