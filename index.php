@@ -28,22 +28,53 @@
     $query3 = "SELECT COUNT(*) FROM semester3 WHERE country = '$c' AND major = '$m[0]'";
     $num = pg_fetch_array(pg_query($query3));
     if ($j==0) {
-     echo "[ $num[0]";
+     echo "[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, $num[0]";
     } else {
      echo ", $num[0]";
     }
    }
-   echo "],";
+   echo ", 0],";
   }
  }
  ?> ];
   
-  console.log(a);
+  var respondents = 63, //Total number of respondents (i.e. the number that makes up the group)
+  emptyPerc = 0.3, //What % of the circle should become empty in comparison to the visible arcs
+  empty = Math.round(respondents*emptyPerc); //How many "units" would define this empty percentage
+  
+  var b = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, empty];
+  
+  var c = [
+ <?php 
+ if ($cresult && $mresult) {
+  while ($row = pg_fetch_row($cresult)) {
+   $c = $row[0];
+   for ($j=0; $j<$mrows; $j++) {
+    $m = pg_fetch_array($mresult, $j);
+    $query3 = "SELECT COUNT(*) FROM semester3 WHERE country = '$c' AND major = '$m[0]'";
+    $num = pg_fetch_array(pg_query($query3));
+    if ($j==0) {
+     echo "[$num[0]";
+    } else {
+     echo ", $num[0]";
+    }
+   }
+   echo "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],";
+  }
+ }
+ ?> ];
+  
+  var d = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, empty, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  
+  var matrix = a.concat(b).concat(c).concat(d);
+  
+  console.log(matrix);
  var test = "<?php echo $test ?>";
  console.log(test);
  
-var Names = ["X","Y","Z","","C","B","A",""];
-var respondents = 95, //Total number of respondents (i.e. the number that makes up the group)
+//var Names = ["X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A"];
+ var Names = ["X","Y","Z","","C","B","A",""];
+  var respondents = 95, //Total number of respondents (i.e. the number that makes up the group)
   emptyPerc = 0.4, //What % of the circle should become empty in comparison to the visible arcs
   emptyStroke = Math.round(respondents*emptyPerc); //How many "units" would define this empty percentage
 var matrix = [
