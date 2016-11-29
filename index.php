@@ -40,9 +40,9 @@
   
   var respondents = 63, //Total number of respondents (i.e. the number that makes up the group)
   emptyPerc = 0.3, //What % of the circle should become empty in comparison to the visible arcs
-  empty = Math.round(respondents*emptyPerc); //How many "units" would define this empty percentage
+  emptyStroke = Math.round(respondents*emptyPerc); //How many "units" would define this empty percentage
   
-  var b = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, empty]];
+  var b = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, emptyStroke]];
   
   var c = [
  <?php 
@@ -65,29 +65,23 @@
  }
  ?> ];
   
-  var d = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, empty, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+  var d = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, emptyStroke, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
   
   var matrix = a.concat(b).concat(c).concat(d);
-  console.log(c);
   console.log(matrix);
- var test = "<?php echo $test ?>";
- console.log(test);
  
-//var Names = ["X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A"];
- var Names = ["X","Y","Z","","C","B","A",""];
-  var respondents = 95, //Total number of respondents (i.e. the number that makes up the group)
-  emptyPerc = 0.4, //What % of the circle should become empty in comparison to the visible arcs
-  emptyStroke = Math.round(respondents*emptyPerc); //How many "units" would define this empty percentage
-var matrix = [
-  [0,0,0,0,10,5,15,0], //Z
-  [0,0,0,0,5,15,20,0], //Y
-  [0,0,0,0,15,5,5,0], //X
-  [0,0,0,0,0,0,0,emptyStroke], //Dummy stroke
-  [10,5,15,0,0,0,0,0], //C
-  [5,15,5,0,0,0,0,0], //B
-  [15,20,5,0,0,0,0,0], //A
-  [0,0,0,emptyStroke,0,0,0,0] //Dummy stroke
-];
+var Names = ["X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A",""];
+ //var Names = ["X","Y","Z","","C","B","A",""];
+// var matrix = [
+//   [0,0,0,0,10,5,15,0], //Z
+//   [0,0,0,0,5,15,20,0], //Y
+//   [0,0,0,0,15,5,5,0], //X
+//   [0,0,0,0,0,0,0,emptyStroke], //Dummy stroke
+//   [10,5,15,0,0,0,0,0], //C
+//   [5,15,5,0,0,0,0,0], //B
+//   [15,20,5,0,0,0,0,0], //A
+//   [0,0,0,emptyStroke,0,0,0,0] //Dummy stroke
+// ];
 //Calculate how far the Chord Diagram needs to be rotated clockwise
 //to make the dummy invisible chord center vertically
 var offset = Math.PI * (emptyStroke/(respondents + emptyStroke)) / 2;
