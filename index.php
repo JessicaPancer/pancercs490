@@ -48,7 +48,7 @@
  <?php 
  if ($cresult && $mresult) {
   for ($i=0; $i<$crows; $i++) {
-   $row = pg_fetch_array($cresult, $i));
+   $row = pg_fetch_array($cresult, $i);
    $c = $row[0];
    for ($j=0; $j<$mrows; $j++) {
     $m = pg_fetch_array($mresult, $j);
