@@ -47,7 +47,8 @@
   var c = [
  <?php 
  if ($cresult && $mresult) {
-  while ($row = pg_fetch_row($cresult)) {
+  for ($i=0; $i<$crows; $i++) {
+   $row = pg_fetch_array($cresult, $i));
    $c = $row[0];
    for ($j=0; $j<$mrows; $j++) {
     $m = pg_fetch_array($mresult, $j);
@@ -67,10 +68,7 @@
   var d = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, empty, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
   
   var matrix = a.concat(b).concat(c).concat(d);
-  console.log(a);
-  console.log(b);
   console.log(c);
-  console.log(d);
   console.log(matrix);
  var test = "<?php echo $test ?>";
  console.log(test);
