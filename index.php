@@ -66,7 +66,7 @@
   
   var d = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, empty, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   
-  var matrix = a.concat(b).concat(c).concat(d);
+  var matrix = a.push(b).push(c).push(d);
   
   console.log(matrix);
  var test = "<?php echo $test ?>";
