@@ -157,29 +157,16 @@ function fade(opacity) {
   
 
 function grabImages() {
-    var instagramUrl = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=adc47ac077889395f9fa3a8150ae9aa2&tags=studyabroad&format=json&nojsoncallback=1&api_sig=c5cfc7b9ddcfb04a0001e1c013c001d9';
-    $.getJSON(instagramUrl, onDataLoaded);
-}
-
-function onDataLoaded(instagram_data) {
-    var target = $("#target");
-    console.log(instagram_data);
-//     if (instagram_data.meta.code == 200) {
-//         var photos = instagram_data.data;
-//         //console.log(photos);
-//         if (photos.length > 0) {
-//             target.empty();
-//             for (var key in photos) {
-//                 var photo = photos[key];
-//                 target.append('<a href="' + photo.link + '"><img src="' + photo.images.thumbnail.url + '"></a>')
-//             }
-//         } else {
-//             target.html("nothing found");
-//         }
-//     } else {
-//         var error = instagram_data.meta.error_message;
-//         target.html(error);
-//     }
+    var URL = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=adc47ac077889395f9fa3a8150ae9aa2&tags=studyabroad&format=json&nojsoncallback=1&api_sig=c5cfc7b9ddcfb04a0001e1c013c001d9'; 
+ $.getJSON(URL, function(data){
+  console.log(data);
+    $.each(data.photoset.photo, function(i, item){
+      // Creating the image URL. Info: http://www.flickr.com/services/api/misc.urls.html
+      var img_src = "http://farm" + item.farm + ".static.flickr.com/" + item.server + "/" + item.id + "_" + item.secret + "_m.jpg";
+      var img_thumb = $("<img/>").attr("src", img_src).css("margin", "8px")
+      $(img_thumb).appendTo("#flickr-images");
+    });
+  });
 }
 
 grabImages();
