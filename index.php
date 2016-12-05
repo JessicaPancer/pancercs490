@@ -156,7 +156,7 @@ function fade(opacity) {
 }
   
 
-function grabImages(tag, count, access_parameters) {
+function grabImages() {
     var instagramUrl = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=adc47ac077889395f9fa3a8150ae9aa2&tags=studyabroad&format=json&nojsoncallback=1&api_sig=c5cfc7b9ddcfb04a0001e1c013c001d9';
     $.getJSON(instagramUrl, onDataLoaded);
 }
@@ -182,6 +182,6 @@ function onDataLoaded(instagram_data) {
 //     }
 }
 
-grabImages('unicorn', 40, access_parameters);
+grabImages();
 </script>
 </html>
