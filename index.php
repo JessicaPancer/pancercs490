@@ -161,7 +161,7 @@ function fade(opacity) {
     };
 
 function grabImages(tag, count, access_parameters) {
-    var instagramUrl = 'https://api.instagram.com/v1/tags/' + tag + '/media/recent?callback=?&count=' + count;
+    var instagramUrl = 'https://api.instagram.com/v1/tags/' + tag + '/media/recent?;
     $.getJSON(instagramUrl, access_parameters, onDataLoaded);
 }
 
