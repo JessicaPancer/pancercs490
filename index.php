@@ -3,7 +3,7 @@
   <title>PHP Test</title>
  </head>
 <svg width="500" height="500"></svg>
-<div id="flickr-images">FOO! </div>
+<div id="flickr-images"></div>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <?php 
@@ -165,7 +165,6 @@ function grabImages() {
       // Creating the image URL. Info: http://www.flickr.com/services/api/misc.urls.html
       var img_src = "https://farm" + item.farm + ".static.flickr.com/" + item.server + "/" + item.id + "_" + item.secret + "_m.jpg";
       var img_thumb = $("<img/>").attr("src", img_src).css("margin", "8px")
-      console.log(img_thumb);
       $(img_thumb).appendTo("#flickr-images");
     });
   });
