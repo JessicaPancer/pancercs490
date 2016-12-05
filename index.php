@@ -165,6 +165,7 @@ function grabImages() {
       // Creating the image URL. Info: http://www.flickr.com/services/api/misc.urls.html
       var img_src = "https://farm" + item.farm + ".static.flickr.com/" + item.server + "/" + item.id + "_" + item.secret + "_m.jpg";
       var img_thumb = $("<img/>").attr("src", img_src).css("margin", "8px")
+      console.log(img_thumb);
       $(img_thumb).appendTo("#flickr-images");
     });
   });
