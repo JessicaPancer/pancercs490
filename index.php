@@ -155,35 +155,31 @@ function fade(opacity) {
   };
 }
   
-  var access_token = "1581437709.f0b4b7e.fa83bf290d054d0b841fb0da2cffd6e9",
-    access_parameters = {
-        access_token: access_token
-    };
 
 function grabImages(tag, count, access_parameters) {
-    var instagramUrl = 'https://api.instagram.com/v1/tags/' + tag + '/media/recent?';
-    $.getJSON(instagramUrl, access_parameters, onDataLoaded);
+    var instagramUrl = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=adc47ac077889395f9fa3a8150ae9aa2&tags=studyabroad&format=json&nojsoncallback=1&api_sig=c5cfc7b9ddcfb04a0001e1c013c001d9';
+    $.getJSON(instagramUrl, onDataLoaded);
 }
 
 function onDataLoaded(instagram_data) {
     var target = $("#target");
     console.log(instagram_data);
-    if (instagram_data.meta.code == 200) {
-        var photos = instagram_data.data;
-        //console.log(photos);
-        if (photos.length > 0) {
-            target.empty();
-            for (var key in photos) {
-                var photo = photos[key];
-                target.append('<a href="' + photo.link + '"><img src="' + photo.images.thumbnail.url + '"></a>')
-            }
-        } else {
-            target.html("nothing found");
-        }
-    } else {
-        var error = instagram_data.meta.error_message;
-        target.html(error);
-    }
+//     if (instagram_data.meta.code == 200) {
+//         var photos = instagram_data.data;
+//         //console.log(photos);
+//         if (photos.length > 0) {
+//             target.empty();
+//             for (var key in photos) {
+//                 var photo = photos[key];
+//                 target.append('<a href="' + photo.link + '"><img src="' + photo.images.thumbnail.url + '"></a>')
+//             }
+//         } else {
+//             target.html("nothing found");
+//         }
+//     } else {
+//         var error = instagram_data.meta.error_message;
+//         target.html(error);
+//     }
 }
 
 grabImages('unicorn', 40, access_parameters);
