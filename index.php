@@ -74,8 +74,10 @@
  }
  ?>
 var c = <?php echo json_encode($ctotal) ?>;
- console.log("blah");
-console.log(c);
+var test1 = <?php echo json_encode($crows) ?>
+var test2 = <?php echo json_encode($mrows) ?>
+ console.log(test1);
+console.log(test2);
 console.log("blaht");
   
   var f = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, emptyStroke, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
