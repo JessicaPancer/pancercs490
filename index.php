@@ -10,16 +10,23 @@
   <?php 
         $db = pg_connect('host=ec2-54-235-182-120.compute-1.amazonaws.com dbname=d1hbm7ist1cc38 user=oqqwodgjyuhqyv password=xqQSoIO5gbPfUOVGPTp05Orni2'); 
 
-        $query1 = "SELECT DISTINCT country FROM semester3"; 
-        $query2 = "SELECT DISTINCT major FROM semester3";
+        $query1 = "SELECT ARRAY(SELECT DISTINCT country FROM semester3)"; 
+        $query2 = "SELECT ARRAY(SELECT DISTINCT major FROM semester3)";
 
         $cresult = pg_query($query1);
         $mresult = pg_query($query2);
  
- $crows = pg_num_rows($cresult);
- $mrows = pg_num_rows($mresult);
+ //$crows = pg_num_rows($cresult);
+ //$mrows = pg_num_rows($mresult);
+	$crows=30;
+	$mrows=29;
  ?>
- <script type="text/javascript">
+<script type="text/javascript">
+	var count = <?php echo json_encode($cresult) ?>;
+	var majors = <?php echo json_encode($mresult) ?>;
+	console.log(count);
+	console.log(majors);
+	console.log("blaht");
 	 
  <?php 
  if ($cresult && $mresult) {
