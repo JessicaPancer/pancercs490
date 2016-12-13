@@ -19,11 +19,15 @@ input[type=text] {
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 12px;
     background-color: white;
     padding: 12px 13px 12px 13px;
 }
 
 input[type=text]:focus {
     width: 60%;
+}
+
+p#Searchheader {
+  font-size: 16px;
 }
