@@ -1,5 +1,10 @@
 <html>
  <link rel="stylesheet" type="text/css" href="abroad.css" />
+<style>
+#circle:hover path.fade {
+	display: none;
+}
+</style>
  <head>
   <title>PHP Test</title>
  </head>
@@ -145,6 +150,7 @@ var color = d3.scaleLinear()
     .range(["black", "red", "orange", "yellow", "green", "aqua", "blue", "purple"]);
 var g = svg.append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+    .attr("id", "circle")
     .datum(chord(matrix));
 var group = g.append("g")
     .attr("class", "groups")
@@ -153,8 +159,8 @@ var group = g.append("g")
   .enter().append("g");
 var pullOutSize = 50;
 group.append("path")
-    .on("mouseover", fade(opacityLow))
-    .on("mouseout", fade(opacityDefault))
+//     .on("mouseover", fade(opacityLow))
+//     .on("mouseout", fade(opacityDefault))
     .style("fill", function(d,i) { 
 	if (Names[i] === "") {
 		return "none";
@@ -191,7 +197,7 @@ g.append("g")
 function fade(opacity) {
   return function(d, i) {
   console.log(d);
-  svg.selectAll("path.ribbon")
+  svg.selectAll("ribbon")
     .filter(function(d) { return d.source.index !== i && d.target.index !== i && Names[d.source.index] !== ""; })
     .transition("fadeOnArc")
     .style("opacity", opacity);
