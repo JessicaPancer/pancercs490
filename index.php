@@ -23,11 +23,17 @@
  $mrows = pg_num_rows($mresult);
  ?>
 <script type="text/javascript">
-	var count = <?php echo json_encode($carr) ?>;
+	var countries = <?php echo json_encode($carr) ?>;
 	var majors = <?php echo json_encode($marr) ?>;
-	console.log(count);
+	console.log(countries);
 	console.log(majors);
 	console.log("blaht");
+	var NNames = [];
+	for (i = 0; i < $crows; i++) {
+		NNames.push(countries[i]['country']);
+	}
+	console.log(NNames);
+	console.log("country names above");
 	 
  <?php 
  if ($cresult && $mresult) {
