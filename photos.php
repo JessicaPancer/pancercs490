@@ -7,6 +7,9 @@
     echo '<p id="title"> Study abroad photos in '. $place .': </p>';
   ?>
 <input action="action" type="button" value="Back" onclick="history.go(-1);" />
+<div id="flickr-images"></div>
+</center>
+</body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
 	function grabImages() {
@@ -29,7 +32,4 @@
 	}
 	grabImages();
 </script>
-</center>
-
-</body>
 </html>
