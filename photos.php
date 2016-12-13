@@ -7,6 +7,7 @@
     echo '<p id="title"> Study abroad photos in '. $place .': </p>';
   ?>
 <input action="action" type="button" value="Back" onclick="history.go(-1);" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
 	function grabImages() {
 	 var URL = 'https://api.flickr.com/services/rest/?method=flickr.places.find&api_key=b91bca9fe607c9115da17dafab2e6a08&query=Madrid&format=rest&format=json&jsoncallback=?'; 
