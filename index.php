@@ -84,6 +84,10 @@
    for ($j=0; $j<$crows; $j++) {
     $c = pg_fetch_array($cresult, $j);
     $query3 = "SELECT COUNT(*) FROM semester3 WHERE country = '$c' AND major = '$m[0]'";
+	   echo "hi";
+	   echo $c;
+	   echo $m[0];
+	   echo "bye";
     $num = pg_fetch_array(pg_query($query3));
     $cpart[]=intval($num[0]);
    }
