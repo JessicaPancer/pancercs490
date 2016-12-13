@@ -46,23 +46,24 @@
   while ($row = pg_fetch_row($cresult)) {
    $c = $row[0];
    $apart=array();
-   for ($j=0; $j<$mrows; $j++) {
-    $m = pg_fetch_array($mresult, $j);
-    $query3 = "SELECT COUNT(*) FROM semester3 WHERE country = '$c' AND major = '$m[0]'";
-    $num = pg_fetch_array(pg_query($query3));
-    if ($j==0) {
-     array_push($apart, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, intval($num[0]));
+   for ($j=0; $j<$mrows+$crows+1; $j++) {
+    if ($j<$crows+1) {
+    	$apart[]=0;
     } else {
-     $apart[]=intval($num[0]);
+	$m = pg_fetch_array($mresult, $j-$crows-1);
+        $query3 = "SELECT COUNT(*) FROM semester3 WHERE country = '$c' AND major = '$m[0]'";
+        $num = pg_fetch_array(pg_query($query3));
+        $apart[]=intval($num[0]);
     }
-   }
-   	  
+   }   	  
    $apart[]=0;
    $atotal[]=$apart;
   }
  }
  ?>
  var a = <?php echo json_encode($atotal) ?>;
+ console.log(a);
+	console.log("welp");
   
   var respondents = 63, //Total number of respondents (i.e. the number that makes up the group)
   emptyPerc = 0.3, //What % of the circle should become empty in comparison to the visible arcs
