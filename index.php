@@ -10,8 +10,8 @@
   <?php 
         $db = pg_connect('host=ec2-54-235-182-120.compute-1.amazonaws.com dbname=d1hbm7ist1cc38 user=oqqwodgjyuhqyv password=xqQSoIO5gbPfUOVGPTp05Orni2'); 
 
-        $query1 = "SELECT DISTINCT country FROM semester3"; 
-        $query2 = "SELECT DISTINCT major FROM semester3";
+        $query1 = "SELECT DISTINCT country, region FROM semester3 ORDER BY region ASC, country ASC"; 
+        $query2 = "SELECT DISTINCT major FROM semester3 ORDER BY major DESC";
 
         $cresult = pg_query($query1);
         $mresult = pg_query($query2);
@@ -25,9 +25,6 @@
 <script type="text/javascript">
 	var countries = <?php echo json_encode($carr) ?>;
 	var majors = <?php echo json_encode($marr) ?>;
-	console.log(countries);
-	console.log(majors);
-	console.log("blaht");
 	var Names = [];
 	var crows = <?php echo $crows; ?>;
 	var mrows = <?php echo $mrows; ?>;
@@ -40,7 +37,7 @@
 	}
 	Names.push("");
 	Names.push("");
-	console.log(NNames);
+	console.log(Names);
 	console.log("country names above");
 	 
  <?php 
