@@ -83,7 +83,7 @@
    $cpart=array();
    for ($j=0; $j<$crows; $j++) {
     $c = pg_fetch_array($cresult, $j);
-    $query3 = "SELECT COUNT(*) FROM semester3 WHERE country = '$c' AND major = '$m[0]'";
+    $query3 = "SELECT COUNT(*) FROM semester3 WHERE country = '$c[0]' AND major = '$m'";
 	   echo "hi";
 	   echo $c;
 	   echo $m[0];
