@@ -30,6 +30,7 @@ input[type=text] {
     font-size: 12px;
     background-color: white;
     padding: 12px 13px 12px 13px;
+    margin-bottom: 16px;
 }
 
 input[type=text]:focus {
