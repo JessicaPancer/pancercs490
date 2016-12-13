@@ -12,6 +12,8 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
+	var place = "<?php echo $place;?>";
+	console.log(place);
 	function grabImages() {
 	 var URL = 'https://api.flickr.com/services/rest/?method=flickr.places.find&api_key=b91bca9fe607c9115da17dafab2e6a08&query=Madrid&format=rest&format=json&jsoncallback=?'; 
 	 $.getJSON(URL, function(data){
