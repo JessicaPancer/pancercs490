@@ -25,7 +25,6 @@
 <script type="text/javascript">
 	var count = <?php echo json_encode($carr) ?>;
 	var majors = <?php echo json_encode($marr) ?>;
-	for 
 	console.log(count);
 	console.log(majors);
 	console.log("blaht");
