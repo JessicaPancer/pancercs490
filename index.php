@@ -158,7 +158,17 @@ function fade(opacity) {
   
 
 function grabImages() {
-    var URL = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=b91bca9fe607c9115da17dafab2e6a08&tags=studyabroad&format=rest&format=json&jsoncallback=?'; 
+ var URL = 'https://api.flickr.com/services/rest/?method=flickr.places.find&api_key=b91bca9fe607c9115da17dafab2e6a08&query=Madrid&format=rest&format=json&jsoncallback=?'; 
+ $.getJSON(URL, function(data){
+  console.log(data);
+    $.each(data.places.place, function(i, item){
+      var placeurl = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=b91bca9fe607c9115da17dafab2e6a08&tags=studyabroad&format=rest&format=json&jsoncallback=?&place_id=' + item.place_id;
+      // Creating the image URL. Info: http://www.flickr.com/services/api/misc.urls.html
+      console.log(placeurl);
+    });
+  });
+ 
+ var URL = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=b91bca9fe607c9115da17dafab2e6a08&tags=studyabroad&format=rest&format=json&jsoncallback=?'; 
  $.getJSON(URL, function(data){
   console.log(data);
     $.each(data.photos.photo, function(i, item){
