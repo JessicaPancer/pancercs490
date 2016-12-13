@@ -70,7 +70,12 @@
   emptyPerc = 0.3, //What % of the circle should become empty in comparison to the visible arcs
   emptyStroke = Math.round(respondents*emptyPerc); //How many "units" would define this empty percentage
   
-  var b = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, emptyStroke]];
+  var bpart = [];
+  for (i=0;i<$crows+1+$mrows+1;i++) {
+    bpart.push(0);
+  }
+  bpart.push(emptyStroke);
+  var b = [bpart];
   
  <?php 
  if ($cresult && $mresult) {
@@ -83,12 +88,9 @@
     $m = pg_fetch_array($mresult, $j);
     $query3 = "SELECT COUNT(*) FROM semester3 WHERE country = '$c' AND major = '$m[0]'";
     $num = pg_fetch_array(pg_query($query3));
-    if ($j==0) {
-     $cpart[]=intval($num[0]);
-    } else {
-     $cpart[]=intval($num[0]);
-    }
+    $cpart[]=intval($num[0]);
    }
+   for ($k=0; $k<$
    array_push($cpart, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
    $ctotal[]=$cpart;
   }
