@@ -115,18 +115,6 @@ var fpart = [];
   var matrix = a.concat(b).concat(c).concat(f);
   console.log(matrix);
  
-var NNames = ["X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A",""];
- //var Names = ["X","Y","Z","","C","B","A",""];
-// var matrix = [
-//   [0,0,0,0,10,5,15,0], //Z
-//   [0,0,0,0,5,15,20,0], //Y
-//   [0,0,0,0,15,5,5,0], //X
-//   [0,0,0,0,0,0,0,emptyStroke], //Dummy stroke
-//   [10,5,15,0,0,0,0,0], //C
-//   [5,15,5,0,0,0,0,0], //B
-//   [15,20,5,0,0,0,0,0], //A
-//   [0,0,0,emptyStroke,0,0,0,0] //Dummy stroke
-// ];
 //Calculate how far the Chord Diagram needs to be rotated clockwise
 //to make the dummy invisible chord center vertically
 var offset = Math.PI * (emptyStroke/(respondents + emptyStroke)) / 2;
@@ -153,8 +141,8 @@ var ribbon = d3.ribbon()
     .startAngle(startAngle)
     .endAngle(endAngle);
 var color = d3.scaleLinear()
-    .domain([0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 61])
-    .range(["red", "orange", "yellow", "green", "blue", "purple", "red", "orange", "yellow", "green", "blue", "purple", "black"]);
+    .domain([0, 31, 35, 40, 45, 50, 55, 61])
+    .range(["black", "red", "orange", "yellow", "green", "aqua", "blue", "purple"]);
 var g = svg.append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
     .datum(chord(matrix));
