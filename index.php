@@ -190,9 +190,9 @@ g.append("g")
 	.style("pointer-events", function(d,i) { return (Names[d.source.index] === "" ? "none" : "auto"); }); //Remove pointer events from dummy strokes
 function fade(opacity) {
   return function(d, i) {
-  console.log("here");
-  svg.selectAll("path.ribbon")
-    //.filter(function(d) { return d.source.index !== i && d.target.index !== i && Names[d.source.index] !== ""; })
+  console.log(d);
+  svg.selectAll("path")
+    .filter(function(d) { return d.source.index !== i && d.target.index !== i && Names[d.source.index] !== ""; })
     .transition("fadeOnArc")
     .style("opacity", opacity);
   };
