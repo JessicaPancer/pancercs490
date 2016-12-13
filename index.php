@@ -117,7 +117,7 @@ var fpart = [];
  
 //Calculate how far the Chord Diagram needs to be rotated clockwise
 //to make the dummy invisible chord center vertically
-var offset = Math.PI * (emptyStroke/(respondents + emptyStroke)) / 2;
+var offset = Math.PI * (emptyStroke/(respondents + emptyStroke+10)) / 2;
 var svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height"),
