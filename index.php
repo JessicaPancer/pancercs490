@@ -153,7 +153,7 @@ var group = g.append("g")
   .enter().append("g");
 var pullOutSize = 50;
 group.append("path")
-    .style("fill", function(d,i) { return (Names[i] === "" ? "none" : d3.rgb(color(d.index)).darker()); })
+    .style("fill", function(d,i) { return (Names[i] === "" ? "none" : d3.rgb(color(0)).darker()); })
     .attr("d", arc);
 group.append("text")
 //Slightly altered function where the offset is added to the angle
