@@ -44,9 +44,6 @@
  }
  ?>
  var a = <?php echo json_encode($atotal) ?>;
- console.log("blah");
-console.log(a);
-console.log("blaht");
   
   var respondents = 63, //Total number of respondents (i.e. the number that makes up the group)
   emptyPerc = 0.3, //What % of the circle should become empty in comparison to the visible arcs
@@ -54,26 +51,32 @@ console.log("blaht");
   
   var b = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, emptyStroke]];
   
-  var c = [
  <?php 
  if ($cresult && $mresult) {
+  $ctotal=array();
   for ($i=0; $i<$crows; $i++) {
    $row = pg_fetch_array($cresult, $i);
    $c = $row[0];
+   $cpart=array();
    for ($j=0; $j<$mrows; $j++) {
     $m = pg_fetch_array($mresult, $j);
     $query3 = "SELECT COUNT(*) FROM semester3 WHERE country = '$c' AND major = '$m[0]'";
     $num = pg_fetch_array(pg_query($query3));
     if ($j==0) {
-     echo "[$num[0]";
+     $cpart[]=intval($num[0]);
     } else {
-     echo ", $num[0]";
+     $cpart[]=intval($num[0]);
     }
    }
-   echo "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],";
+   array_push($cpart, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+   $ctotal[]=$cpart;
   }
  }
- ?> ];
+ ?>
+var c = <?php echo json_encode($ctotal) ?>;
+ console.log("blah");
+console.log(c);
+console.log("blaht");
   
   var f = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, emptyStroke, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
   
