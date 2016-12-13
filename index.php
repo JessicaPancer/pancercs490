@@ -179,7 +179,7 @@ group.append("text")
 g.append("g")
     .attr("class", "ribbons")
     .on("mouseover", fade(opacityLow))
-    .on("mouseout", fade(opacityDefault));
+    .on("mouseout", fade(opacityDefault))
   .selectAll("path")
   .data(function(chords) { return chords; })
   .enter().append("path")
