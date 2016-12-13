@@ -85,7 +85,7 @@ console.log("blaht");
   var matrix = a.concat(b).concat(c).concat(f);
   console.log(matrix);
  
-var Names = ["X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B",""];
+var Names = ["X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A",""];
  //var Names = ["X","Y","Z","","C","B","A",""];
 // var matrix = [
 //   [0,0,0,0,10,5,15,0], //Z
