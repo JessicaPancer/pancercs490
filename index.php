@@ -37,8 +37,6 @@
 	}
 	Names.push("");
 	Names.push("");
-	console.log(Names);
-	console.log("country names above");
 	 
  <?php 
  if ($cresult && $mresult) {
@@ -102,7 +100,16 @@ var test2 = <?php echo json_encode($mrows) ?>;
 console.log(test2);
 console.log("blaht");
   
-  var f = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, emptyStroke, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+	
+var fpart = [];
+  for (i=0;i<crows;i++) {
+    fpart.push(0);
+  }
+  fpart.push(emptyStroke);
+  for (i=0;i<mrows+2;i++) {
+    fpart.push(0);
+  }
+  var f = [fpart];
   
   var matrix = a.concat(b).concat(c).concat(f);
   console.log(matrix);
