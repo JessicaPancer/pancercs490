@@ -57,6 +57,7 @@
     }
    }   	  
    $apart[]=0;
+   $apart[]=0;
    $atotal[]=$apart;
   }
  }
