@@ -25,6 +25,7 @@
 <script type="text/javascript">
 	var count = <?php echo json_encode($carr) ?>;
 	var majors = <?php echo json_encode($marr) ?>;
+	for 
 	console.log(count);
 	console.log(majors);
 	console.log("blaht");
@@ -118,7 +119,6 @@ var svg = d3.select("svg"),
 var formatValue = d3.formatPrefix(",.0", 1e3);
 var chord = d3.chord()
     .padAngle(0.05)
-    .sortSubgroups(d3.descending); //maybe no sort?
 //Include the offset in de start and end angle to rotate the Chord diagram clockwise
 function startAngle(d) { return d.startAngle + offset; }
 function endAngle(d) { return d.endAngle + offset; }
