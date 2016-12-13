@@ -7,6 +7,7 @@
     echo '<h1 id="title"> Study abroad photos of '. $place .': </h1>';
   ?>
 <input action="action" type="button" value="Back" onclick="history.go(-1);" />
+<br>
 <div id="flickr-images"></div>
 </center>
 </body>
