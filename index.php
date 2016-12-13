@@ -153,8 +153,8 @@ var ribbon = d3.ribbon()
     .startAngle(startAngle)
     .endAngle(endAngle);
 var color = d3.scaleLinear()
-    .domain([0, 5, 10, 15, 20, 25, 31])
-    .range(["red", "orange", "yellow", "green", "blue", "purple", "black"]);
+    .domain([0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 61])
+    .range(["red", "orange", "yellow", "green", "blue", "purple", "red", "orange", "yellow", "green", "blue", "purple", "black"]);
 var g = svg.append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
     .datum(chord(matrix));
