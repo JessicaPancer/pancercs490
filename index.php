@@ -178,14 +178,16 @@ group.append("text")
   .text(function(d,i) { return Names[i]; });
 g.append("g")
     .attr("class", "ribbons")
-    // .on("mouseover", fade(opacityLow))
-    // .on("mouseout", fade(opacityDefault));
+    .on("mouseover", fade(opacityLow))
+    .on("mouseout", fade(opacityDefault));
   .selectAll("path")
   .data(function(chords) { return chords; })
   .enter().append("path")
     .attr("d", ribbon)
     .style("fill", function(d) { return (Names[d.target.index] === "" ? "none" : color(d.target.index)); })
-    .style("stroke", function(d) { return (Names[d.target.index] === "" ? "none" : d3.rgb(color(d.target.index)).darker()); });
+    .style("stroke", function(d) { return (Names[d.target.index] === "" ? "none" : d3.rgb(color(d.target.index)).darker()); })
+	.style("opacity", function(d) { return (Names[d.source.index] === "" ? 0 : opacityDefault); }) //Make the dummy strokes have a zero opacity (invisible)
+	.style("pointer-events", function(d,i) { return (Names[d.source.index] === "" ? "none" : "auto"); }); //Remove pointer events from dummy strokes
 function fade(opacity) {
   return function(d, i) {
   svg.selectAll("path.ribbons")
