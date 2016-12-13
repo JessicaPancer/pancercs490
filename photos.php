@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <html>
-<body>
+<body background="background.jpg">
 <center>
   <?php
   $place = $_GET["place"];
