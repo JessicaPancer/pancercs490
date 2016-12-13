@@ -71,7 +71,7 @@
   emptyStroke = Math.round(respondents*emptyPerc); //How many "units" would define this empty percentage
   
   var bpart = [];
-  for (i=0;i<$crows+1+$mrows+1;i++) {
+  for (i=0;i<crows+1+mrows+1;i++) {
     bpart.push(0);
   }
   bpart.push(emptyStroke);
@@ -90,7 +90,6 @@
     $num = pg_fetch_array(pg_query($query3));
     $cpart[]=intval($num[0]);
    }
-   for ($k=0; $k<$
    array_push($cpart, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
    $ctotal[]=$cpart;
   }
