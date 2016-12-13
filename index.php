@@ -64,7 +64,7 @@
 	console.log("welp");
   
   var respondents = 63, //Total number of respondents (i.e. the number that makes up the group)
-  emptyPerc = 0.3, //What % of the circle should become empty in comparison to the visible arcs
+  emptyPerc = 0.4, //What % of the circle should become empty in comparison to the visible arcs
   emptyStroke = Math.round(respondents*emptyPerc); //How many "units" would define this empty percentage
   
   var bpart = [];
