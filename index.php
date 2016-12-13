@@ -162,6 +162,7 @@ function fade(opacity) {
 	<p id="Searchheader">View other people's study abroad photos:</p>
 	<form action="photos.php">
 		<input type="text" name="place" maxlength=100 placeholder="Search a location">
+		<br>
 		<input type="submit" value="Search">
 	</form>
 </center>
