@@ -74,8 +74,8 @@
  }
  ?>
 var c = <?php echo json_encode($ctotal) ?>;
-var test1 = <?php echo json_encode($crows) ?>
-var test2 = <?php echo json_encode($mrows) ?>
+var test1 = <?php echo json_encode($crows) ?>;
+var test2 = <?php echo json_encode($mrows) ?>;
  console.log(test1);
 console.log(test2);
 console.log("blaht");
