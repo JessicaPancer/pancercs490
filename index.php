@@ -131,9 +131,9 @@ var ribbon = d3.ribbon()
     .radius(innerRadius)
     .startAngle(startAngle)
     .endAngle(endAngle);
-var color = d3.scaleOrdinal() //make range versus ordinal
-    .domain(d3.range(4))
-    .range(["#2d2b51", "#006dfd", "#e32934", "#ffffff"]);
+var color = d3.scale.linear().domain([1,31])
+      .interpolate(d3.interpolateHcl)
+      .range([d3.rgb("#007AFF"), d3.rgb('#FFF500')])
 var g = svg.append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
     .datum(chord(matrix));
