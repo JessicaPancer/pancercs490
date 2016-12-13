@@ -34,7 +34,7 @@
 	for (i = 0; i < crows; i++) {
 		Names.push(countries[i]['country']);
 	}
-	NNames.push("");
+	Names.push("");
 	for (j = 0; j < mrows; j++) {
 		Names.push(majors[j]['major']);
 	}
