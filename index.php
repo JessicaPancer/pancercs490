@@ -55,7 +55,6 @@
     }
    }   	  
    $apart[]=0;
-   $apart[]=0;
    $atotal[]=$apart;
   }
  }
@@ -69,7 +68,7 @@
   emptyStroke = Math.round(respondents*emptyPerc); //How many "units" would define this empty percentage
   
   var bpart = [];
-  for (i=0;i<crows+1+mrows+1;i++) {
+  for (i=0;i<crows+1+mrows;i++) {
     bpart.push(0);
   }
   bpart.push(emptyStroke);
@@ -88,7 +87,7 @@
     $num = pg_fetch_array(pg_query($query3));
     $cpart[]=intval($num[0]);
    }
-   for ($j=0; $j<$mrows+3; $j++) {
+   for ($j=0; $j<$mrows+2; $j++) {
   	 $cpart[]=0;
    }
    $ctotal[]=$cpart;
@@ -108,7 +107,7 @@ var fpart = [];
     fpart.push(0);
   }
   fpart.push(emptyStroke);
-  for (i=0;i<mrows+2;i++) {
+  for (i=0;i<mrows+1;i++) {
     fpart.push(0);
   }
   var f = [fpart];
