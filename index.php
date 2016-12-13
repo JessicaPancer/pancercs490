@@ -28,17 +28,18 @@
 	console.log(countries);
 	console.log(majors);
 	console.log("blaht");
-	var NNames = [];
+	var Names = [];
 	var crows = <?php echo $crows; ?>;
 	var mrows = <?php echo $mrows; ?>;
 	for (i = 0; i < crows; i++) {
-		NNames.push(countries[i]['country']);
+		Names.push(countries[i]['country']);
 	}
 	NNames.push("");
 	for (j = 0; j < mrows; j++) {
-		NNames.push(majors[j]['major']);
+		Names.push(majors[j]['major']);
 	}
-	NNames.push("");
+	Names.push("");
+	Names.push("");
 	console.log(NNames);
 	console.log("country names above");
 	 
@@ -106,7 +107,7 @@ console.log("blaht");
   var matrix = a.concat(b).concat(c).concat(f);
   console.log(matrix);
  
-var Names = ["X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A",""];
+var NNames = ["X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A","X","Y","Z","C","B","A",""];
  //var Names = ["X","Y","Z","","C","B","A",""];
 // var matrix = [
 //   [0,0,0,0,10,5,15,0], //Z
