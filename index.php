@@ -29,7 +29,8 @@
 	console.log(majors);
 	console.log("blaht");
 	var NNames = [];
-	for (i = 0; i < $crows; i++) {
+	var crows = <?php echo $crows; ?>;
+	for (i = 0; i < crows; i++) {
 		NNames.push(countries[i]['country']);
 	}
 	console.log(NNames);
