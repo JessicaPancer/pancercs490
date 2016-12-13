@@ -12,6 +12,14 @@ svg {
         display: block;
 }
 
+h1 {
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	font-size: 78px;
+  margin-bottom: 0px;
+}
+
 input[type=text] {
     width: 300px;
     -webkit-transition: width 0.4s ease-in-out;
