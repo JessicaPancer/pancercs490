@@ -158,7 +158,7 @@ function fade(opacity) {
   
 
 function grabImages() {
-    var URL = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=adc47ac077889395f9fa3a8150ae9aa2&tags=studyabroad&format=json&nojsoncallback=1'; 
+    var URL = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=7994e6506e931f5d4255da6cecde1f83&tags=studyabroad&format=rest'; 
  $.getJSON(URL, function(data){
   console.log(data);
     $.each(data.photos.photo, function(i, item){
