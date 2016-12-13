@@ -20,25 +20,33 @@
  $mrows = pg_num_rows($mresult);
  ?>
  <script type="text/javascript">
-  var a = [
+	 
  <?php 
  if ($cresult && $mresult) {
+  $atotal=array();
   while ($row = pg_fetch_row($cresult)) {
    $c = $row[0];
+   $apart=array();
    for ($j=0; $j<$mrows; $j++) {
     $m = pg_fetch_array($mresult, $j);
     $query3 = "SELECT COUNT(*) FROM semester3 WHERE country = '$c' AND major = '$m[0]'";
     $num = pg_fetch_array(pg_query($query3));
     if ($j==0) {
-     echo "[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, $num[0]";
+     $apart[] = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, $num[0]);
     } else {
-     echo ", $num[0]";
+     $apart[]=$num[0];
     }
    }
-   echo ", 0],";
+   	  
+   $apart[]=0;
+   $atotal[]=$apart;
   }
  }
- ?> ];
+ ?>
+ var a = <?php echo json_encode($atotal) ?>;
+ console.log("blah");
+console.log(a);
+console.log("blaht");
   
   var respondents = 63, //Total number of respondents (i.e. the number that makes up the group)
   emptyPerc = 0.3, //What % of the circle should become empty in comparison to the visible arcs
