@@ -180,6 +180,8 @@ grabImages();
 </script>
 <p id="Searchheader">View other people's study abroad photos:</p>
 <form action="photos.php">
-	 		<input type="text" name="place" maxlength=100 placeholder="Search a location">
+	<hr width="33%">
+	<input type="text" name="place" maxlength=100 placeholder="Search a location">
+	<input type="submit" value="Search">
 </form>
 </html>
