@@ -78,17 +78,19 @@
  <?php 
  if ($cresult && $mresult) {
   $ctotal=array();
-  for ($i=0; $i<$crows; $i++) {
-   $row = pg_fetch_array($cresult, $i);
-   $c = $row[0];
+  for ($i=0; $i<$mrows; $i++) {
+   $row = pg_fetch_array($mresult, $i);
+   $m = $row[0];
    $cpart=array();
-   for ($j=0; $j<$mrows; $j++) {
-    $m = pg_fetch_array($mresult, $j);
+   for ($j=0; $j<$crows; $j++) {
+    $c = pg_fetch_array($cresult, $j);
     $query3 = "SELECT COUNT(*) FROM semester3 WHERE country = '$c' AND major = '$m[0]'";
     $num = pg_fetch_array(pg_query($query3));
     $cpart[]=intval($num[0]);
    }
-   array_push($cpart, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+   for ($j=0; $j<$mrows+3; $j++) {
+  	 $cpart[]=0;
+   }
    $ctotal[]=$cpart;
   }
  }
