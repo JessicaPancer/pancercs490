@@ -191,7 +191,7 @@ g.append("g")
 function fade(opacity) {
   return function(d, i) {
   console.log("here");
-  svg.selectAll("path.ribbons")
+  svg.selectAll("path.ribbon")
     .filter(function(d) { return d.source.index !== i && d.target.index !== i && Names[d.source.index] !== ""; })
     .transition("fadeOnArc")
     .style("opacity", opacity);
