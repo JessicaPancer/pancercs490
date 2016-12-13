@@ -153,6 +153,8 @@ var group = g.append("g")
   .enter().append("g");
 var pullOutSize = 50;
 group.append("path")
+    .on("mouseover", fade(opacityLow))
+    .on("mouseout", fade(opacityDefault))
     .style("fill", function(d,i) { 
 	if (Names[i] === "") {
 		return "none";
@@ -178,8 +180,6 @@ group.append("text")
   .text(function(d,i) { return Names[i]; });
 g.append("g")
     .attr("class", "ribbons")
-    .on("mouseover", fade(opacityLow))
-    .on("mouseout", fade(opacityDefault))
   .selectAll("path")
   .data(function(chords) { return chords; })
   .enter().append("path")
