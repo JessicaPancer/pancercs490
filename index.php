@@ -5,7 +5,9 @@
  </head>
 <center>
 	<h1 id="title"> Expanding Our Studies Globally </h1>
-	<p> Description here </p>
+	<p> This chart shows where students with different majors end up studying abroad during the semester.
+		On the left we see the different majors and on the right are the different countries.
+		Each line represents a student. Hover over a section to see its relationships clearer. </p>
 </center>
 <svg width="500" height="500"></svg>
 <div id="flickr-images"></div>
