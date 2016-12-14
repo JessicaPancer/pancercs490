@@ -156,10 +156,10 @@ var group = g.append("g")
     .attr("class", "groups")
   .selectAll("g")
   .data(function(chords) { return chords.groups; })
-  .enter().append("g");
+  .enter().append("g")
+  .on("mouseover", mouseover);
 var pullOutSize = 50;
 group.append("path")
-    .on("mouseover", mouseover)
     .style("fill", function(d,i) { 
 	if (Names[i] === "") {
 		return "none";
