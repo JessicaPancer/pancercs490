@@ -1,8 +1,12 @@
 <html>
  <link rel="stylesheet" type="text/css" href="abroad.css" />
 <style>
-g.ribbons:fade path.fade {
-	display: none;
+#circle circle {
+        fill: none;
+        pointer-events: all;
+}
+#circle:hover path.fade {
+        display: none;
 }
 </style>
  <head>
@@ -203,7 +207,7 @@ function fade(opacity) {
   };
 }
 function mouseover(d, i) {
-	path.classed("fade", function(p) {
+	group.classed("fade", function(p) {
 		console.log(p);
 		return p.source.index != i
 		&& p.target.index != i;
