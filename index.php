@@ -184,12 +184,10 @@ group.append("text")
     + "translate(" + (innerRadius + 55) + ")"
     + (d.angle > Math.PI ? "rotate(180)" : "")
   })
-  .text(function(d,i) { 
-	var str = Names[i];	
-	var URL = "https://pancercs490.herokuapp.com/photos.php?place=" + Names[i];
-	var result = str.link(URL);
-	return result; 
-  });
+  .on("click", function(d){
+        document.location.href = "https://pancercs490.herokuapp.com/photos.php?place=" + Names[i];
+  })
+  .text(function(d,i) { return Names[i]; });
 g.append("g")
     .attr("class", "ribbons")
   .selectAll("path")
