@@ -4,7 +4,7 @@
   <title>PHP Test</title>
  </head>
 <center>
-	<h1 id="title"> Expanding Our Studies Globally </h1>
+	<h1 id="maintitle"> Expanding Our Studies Globally </h1>
 	<p> This chart shows where students with different majors attend study abroad programs  during a semester. <br>
 	The left part of the circle contains the different majors and the right side lists the different countries. <br>
 	The thickness of a section represents the number of students. Hover over a section to see this relationship clearer.</p>
