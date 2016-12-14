@@ -1,7 +1,7 @@
 <html>
  <link rel="stylesheet" type="text/css" href="abroad.css" />
 <style>
-#circle:hover path.fade {
+g.ribbons:fade {
 	display: none;
 }
 </style>
@@ -156,7 +156,8 @@ var group = g.append("g")
     .attr("class", "groups")
   .selectAll("g")
   .data(function(chords) { return chords.groups; })
-  .enter().append("g");
+  .enter().append("g")
+  .on("mouseover", mouseover);
 var pullOutSize = 50;
 group.append("path")
 //     .on("mouseover", fade(opacityLow))
@@ -197,11 +198,17 @@ g.append("g")
 function fade(opacity) {
   return function(d, i) {
   console.log(d);
-  svg.selectAll("ribbon")
+  svg.selectAll("g.ribbons")
     .filter(function(d) { return d.source.index !== i && d.target.index !== i && Names[d.source.index] !== ""; })
     .transition("fadeOnArc")
     .style("opacity", opacity);
   };
+}
+function mouseover(d, i) {
+	chord.classed("fade", function(p) {
+		return p.source.index != i
+		&& p.target.index != i;
+	});
 }
 </script>
 <hr width="33%">
