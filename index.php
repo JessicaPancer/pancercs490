@@ -1,7 +1,7 @@
 <html>
  <link rel="stylesheet" type="text/css" href="abroad.css" />
 <style>
-g.ribbons:fade {
+g.ribbons:fade path.fade {
 	display: none;
 }
 </style>
