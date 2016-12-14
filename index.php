@@ -3,6 +3,10 @@
  <head>
   <title>PHP Test</title>
  </head>
+<center>
+	<h1 id="title"> Expanding Our Studies Globally </h1>
+	<p> Description here </p>
+</center>
 <svg width="500" height="500"></svg>
 <div id="flickr-images"></div>
 <script src="https://d3js.org/d3.v4.min.js"></script>
