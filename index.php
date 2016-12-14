@@ -186,7 +186,7 @@ group.append("text")
     + (d.angle > Math.PI ? "rotate(180)" : "")
   })
   .on("click", function(d,i){
-        if (i < crows) {document.location.href = "https://pancercs490.herokuapp.com/photos.php?place=" + Names[i];}
+        if (i < crows-1) {document.location.href = "https://pancercs490.herokuapp.com/photos.php?place=" + Names[i];}
   })
   .text(function(d,i) { return Names[i]; });
 g.append("g")
