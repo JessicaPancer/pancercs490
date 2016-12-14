@@ -206,6 +206,7 @@ function fade(opacity) {
 }
 function mouseover(d, i) {
 	group.classed("fade", function(p) {
+		console.log(p);
 		return p.source.index != i
 		&& p.target.index != i;
 	});
