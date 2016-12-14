@@ -7,7 +7,7 @@
 	<h1 id="maintitle"> Expanding Our Studies Globally </h1>
 	<p> This chart shows where students with different majors attend study abroad programs  during a semester. <br>
 	The left part of the circle contains the different majors and the right side lists the different countries. <br>
-	The thickness of a section represents the number of students. Hover over a section to see this relationship clearer. <br>
+	The width of a section represents the number of students. Hover over a section to see this relationship clearer. <br>
 	Click on the name of a country or use the search bar at the bottom of the page to get a <br>
 		taste of the locations through people's study abroad pictures. </p>
 </center>
