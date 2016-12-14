@@ -161,7 +161,9 @@ var group = g.append("g")
   .selectAll("g")
   .data(function(chords) { return chords.groups; })
   .enter().append("g")
-  .on("mouseover", mouseover);
+  .on("mouseover", fade(opacityLow))
+  .on("mouseout", fade(opacityDefault));
+  //.on("mouseover", mouseover);
 var pullOutSize = 50;
 group.append("path")
     .style("fill", function(d,i) { 
@@ -200,11 +202,10 @@ g.append("g")
 	.style("pointer-events", function(d,i) { return (Names[d.source.index] === "" ? "none" : "auto"); }); //Remove pointer events from dummy strokes
 function fade(opacity) {
   return function(d, i) {
-  console.log(d);
-  svg.selectAll("g.ribbons")
-    .filter(function(d) { return d.source.index !== i && d.target.index !== i && Names[d.source.index] !== ""; })
-    .transition("fadeOnArc")
-    .style("opacity", opacity);
+	svg.selectAll("path.chord")
+		.filter(function(d) { return d.source.index !== i && d.target.index !== i && Names[d.source.index] !== ""; })
+		.transition("fadeOnArc")
+		.style("opacity", opacity);
   };
 }
 function mouseover(d, i) {
