@@ -203,7 +203,7 @@ function fade(opacity) {
   };
 }
 function mouseover(d, i) {
-	ribbons.path.classed("fade", function(p) {
+	path.classed("fade", function(p) {
 		console.log(p);
 		return p.source.index != i
 		&& p.target.index != i;
