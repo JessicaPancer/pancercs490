@@ -210,7 +210,7 @@ function fade(opacity) {
 function mouseover(d, i) {
 	console.log(d);
 	console.log(i);
-	group.classed("fade", function(p) {
+	chord.classed("fade", function(p) {
 		return p.source.index != i
 		&& p.target.index != i;
 	});
