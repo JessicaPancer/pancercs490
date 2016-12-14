@@ -8,7 +8,8 @@
 	<p> This chart shows where students with different majors attend study abroad programs  during a semester. <br>
 	The left part of the circle contains the different majors and the right side lists the different countries. <br>
 	The thickness of a section represents the number of students. Hover over a section to see this relationship clearer. <br>
-	Click on the name of a country or use the search bar at the bottom of the page to get a taste of the locations through people's study abroad pictures. </p>
+	Click on the name of a country or use the search bar at the bottom of the page to get a <br>
+		taste of the locations through people's study abroad pictures. </p>
 </center>
 <svg width="500" height="500"></svg>
 <div id="flickr-images"></div>
