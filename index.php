@@ -1,14 +1,5 @@
 <html>
  <link rel="stylesheet" type="text/css" href="abroad.css" />
-<style>
-#circle circle {
-        fill: none;
-        pointer-events: all;
-}
-#circle:hover path.fade {
-        display: none;
-}
-</style>
  <head>
   <title>PHP Test</title>
  </head>
@@ -163,7 +154,6 @@ var group = g.append("g")
   .enter().append("g")
   .on("mouseover", fade(opacityLow))
   .on("mouseout", fade(opacityDefault));
-  //.on("mouseover", mouseover);
 var pullOutSize = 50;
 group.append("path")
     .style("fill", function(d,i) { 
@@ -207,14 +197,6 @@ function fade(opacity) {
 		.transition("fadeOnArc")
 		.style("opacity", opacity);
   };
-}
-function mouseover(d, i) {
-	console.log(d);
-	console.log(i);
-	chord.classed("fade", function(p) {
-		return p.source.index != i
-		&& p.target.index != i;
-	});
 }
 </script>
 <hr width="33%">
