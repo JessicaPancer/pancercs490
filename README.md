@@ -1,4 +1,4 @@
-# pancercs490
+# CS490 Senior Project
 
 Author: Jessica Pancer
 
