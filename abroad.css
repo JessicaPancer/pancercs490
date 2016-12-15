@@ -1,9 +1,9 @@
 body {
-  font: 10px sans-serif;
+	font: 10px sans-serif;
 }
 
 .ribbons {
-  fill-opacity: 0.67;
+	fill-opacity: 0.67;
 }
 
 svg {
@@ -20,7 +20,6 @@ h1 {
         margin-bottom: 0px;
 }
 
-
 h1#maintitle {
 	font-style: normal;
 	font-variant: normal;
@@ -30,26 +29,26 @@ h1#maintitle {
 }
 
 input[type=text] {
-    width: 300px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 12px;
-    background-color: white;
-    padding: 12px 13px 12px 13px;
-    margin-bottom: 16px;
+    	width: 300px;
+   	-webkit-transition: width 0.4s ease-in-out;
+    	transition: width 0.4s ease-in-out;
+    	box-sizing: border-box;
+    	border: 2px solid #ccc;
+    	border-radius: 4px;
+    	font-size: 12px;
+    	background-color: white;
+    	padding: 12px 13px 12px 13px;
+    	margin-bottom: 16px;
 }
 
 input[type=text]:focus {
-    width: 60%;
+    	width: 60%;
 }
 
 p#Searchheader {
-    font-size: 16px;
+    	font-size: 16px;
 }
 
 input[type="button"] {
-    margin-bottom: 20px;
+    	margin-bottom: 20px;
 }
