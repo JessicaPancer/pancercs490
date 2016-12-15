@@ -1,7 +1,7 @@
 <html>
 <link rel="stylesheet" type="text/css" href="abroad.css" />
 <head>
-	<title>PHP Test</title>
+	<title>Pancer CS490 Project</title>
 </head>
 <center>
 	<h1 id="maintitle"> Expanding Our Studies Globally </h1>
