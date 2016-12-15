@@ -1,7 +1,9 @@
 # pancercs490
 
 Author: Jessica Pancer
+
 Title: Visual Exploration of Study Abroad Locations
+
 Adviser: Holly Rushmeier
 
 The goal for my project was to make the initial exploration of study abroad programs for the academic year easier for Yale students. I wanted it to have a component that allows users to find where students with similar interests as them went abroad and also include a visual representation of these places. Thus, I created a chord graph that related students’ majors to the country they visited when studying abroad. In addition, I created a search function that displays photos from Flickr using the tag ‘studyabroad’ which allows the user to type a specific place in the search bar at the bottom of the page.
